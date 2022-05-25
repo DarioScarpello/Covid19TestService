@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService", "Covid19TestService\Covid19TestService.csproj", "{5E7CA994-371C-447C-8388-6EE47C53BD42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService_WPF", "Covid19TestService_WPF\Covid19TestService_WPF.csproj", "{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5E7CA994-371C-447C-8388-6EE47C53BD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E7CA994-371C-447C-8388-6EE47C53BD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E7CA994-371C-447C-8388-6EE47C53BD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
