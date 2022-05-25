@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService", "Covid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService_WPF", "Covid19TestService_WPF\Covid19TestService_WPF.csproj", "{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService_Library", "Covid19TestService_Library\Covid19TestService_Library.csproj", "{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
