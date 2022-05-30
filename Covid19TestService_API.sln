@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService", "Covid19TestService\Covid19TestService.csproj", "{5E7CA994-371C-447C-8388-6EE47C53BD42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covid19TestService_API", "Covid19TestService\Covid19TestService_API.csproj", "{5E7CA994-371C-447C-8388-6EE47C53BD42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService_WPF", "Covid19TestService_WPF\Covid19TestService_WPF.csproj", "{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covid19TestService_WPF", "Covid19TestService_WPF\Covid19TestService_WPF.csproj", "{9EC60ADC-74EE-4A7A-98EC-010ADADEAD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19TestService_Library", "Covid19TestService_Library\Covid19TestService_Library.csproj", "{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covid19TestService_Library", "Covid19TestService_Library\Covid19TestService_Library.csproj", "{19BAD2E0-4672-4AE6-8F11-5A62E93CAD2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
