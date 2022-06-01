@@ -13,6 +13,20 @@ namespace Covid19TestService_Library.Models
             Pcr = new HashSet<Pcr>();
         }
 
+        public Profile(int pid, int? uid, string firstname, string lastname, int? phonenumber, int? ssn, DateOnly? dob, string address, string city, string country)
+        {
+            Pid = pid;
+            Uid = uid;
+            Firstname = firstname;
+            Lastname = lastname;
+            Phonenumber = phonenumber;
+            Ssn = ssn;
+            Dob = dob;
+            Address = address;
+            City = city;
+            Country = country;
+        }
+
         public int Pid { get; set; }
         public int? Uid { get; set; }
         public string Firstname { get; set; }

@@ -14,5 +14,14 @@ namespace Covid19TestService_Library.Models
         public int? Pid { get; set; }
 
         public virtual Profile PidNavigation { get; set; }
+
+        public Antigen(int aid, int? lines, DateOnly? takenon, bool? ispositive, int? pid)
+        {
+            Aid = aid;
+            Lines = lines;
+            Takenon = takenon;
+            Ispositive = ispositive;
+            Pid = pid;
+        }
     }
 }

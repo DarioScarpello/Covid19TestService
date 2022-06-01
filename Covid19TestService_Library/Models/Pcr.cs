@@ -13,6 +13,15 @@ namespace Covid19TestService_Library.Models
         public bool? Ispositive { get; set; }
         public int? Pid { get; set; }
 
+        public Pcr(int pcrid, int? ct, DateOnly? takenon, bool? ispositive, int? pid)
+        {
+            Pcrid = pcrid;
+            Ct = ct;
+            Takenon = takenon;
+            Ispositive = ispositive;
+            Pid = pid;
+        }
+
         public virtual Profile PidNavigation { get; set; }
     }
 }
