@@ -24,5 +24,10 @@ namespace Covid19TestService_WPF
         {
             InitializeComponent();
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
