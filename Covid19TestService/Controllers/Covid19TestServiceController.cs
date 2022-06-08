@@ -15,10 +15,9 @@ namespace Covid19TestService_API.Controllers
         static JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
         static testservicescarpelloContext context = new testservicescarpelloContext();
 
-        //FROMBODY nochmal nachfragen!!!!
         //DBContext nachfragen!!!!
         [HttpPost("Login/{email}")]
-        public ActionResult Login(string email, string password)
+        public ActionResult Login(string email, [FromBody]string password)
         {
             var selectedUser = context.Users.Where(x => x.Email == email).FirstOrDefault();
 
@@ -52,7 +51,7 @@ namespace Covid19TestService_API.Controllers
         }
 
         [HttpPost("Profiles")]
-        public ActionResult<Profile> CreateProfile(Profile profile)
+        public ActionResult<Profile> CreateProfile([FromBody]Profile profile)
         {
             var allProfiles = context.Profile;
             int nextId = allProfiles.Max(x => x.Pid);
@@ -73,7 +72,7 @@ namespace Covid19TestService_API.Controllers
         }
 
         [HttpPost("PCR")]
-        public ActionResult<Pcr> CreatePCR(Pcr pcr)
+        public ActionResult<Pcr> CreatePCR([FromBody] Pcr pcr)
         {
             var allpcr = context.Pcr;
             int nextId = allpcr.Max(x => x.Pcrid);
@@ -85,7 +84,7 @@ namespace Covid19TestService_API.Controllers
         }
 
         [HttpPost("Antigen")]
-        public ActionResult<Antigen> CreateAntigen(Antigen antigen)
+        public ActionResult<Antigen> CreateAntigen([FromBody] Antigen antigen)
         {
             var allAntigen = context.Antigen;
             int nextId = allAntigen.Max(x => x.Aid);
@@ -97,7 +96,7 @@ namespace Covid19TestService_API.Controllers
         }
 
         [HttpPatch("Profile/{profileId}")]
-        public ActionResult PatchProfileByIdstring(int profileId, Profile profile) 
+        public ActionResult PatchProfileByIdstring(int profileId,[FromBody]Profile profile) 
         {
             var profileToEdit = context.Profile.Where(x => x.Pid == profileId).FirstOrDefault();
 
