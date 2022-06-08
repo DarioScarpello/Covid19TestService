@@ -16,6 +16,7 @@ namespace Covid19TestService_API.Controllers
         static testservicescarpelloContext context = new testservicescarpelloContext();
 
         //FROMBODY nochmal nachfragen!!!!
+        //DBContext nachfragen!!!!
         [HttpPost("Login/{email}")]
         public ActionResult Login(string email, string password)
         {
