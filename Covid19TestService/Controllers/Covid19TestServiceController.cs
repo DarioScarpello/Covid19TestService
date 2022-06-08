@@ -50,7 +50,7 @@ namespace Covid19TestService_API.Controllers
         }
 
         [HttpPost("Profiles")]
-        public ActionResult CreateProfile(Profile profile)
+        public ActionResult<Profile> CreateProfile(Profile profile)
         {
             var allProfiles = context.Profile;
             int nextId = allProfiles.Max(x => x.Pid);
@@ -60,10 +60,10 @@ namespace Covid19TestService_API.Controllers
             return Ok();
         }
 
-        [HttpDelete("Profiles/delete/{ProfileId}")]
-        public ActionResult<Profile> DeleteProfileById(int ProfileId) 
+        [HttpDelete("Profiles{profileId}")]
+        public ActionResult<Profile> DeleteProfileById(int profileId) 
         {
-            var profileToDelete = context.Profile.Where(x => x.Pid == ProfileId).FirstOrDefault();
+            var profileToDelete = context.Profile.Where(x => x.Pid == profileId).FirstOrDefault();
 
             context.Profile.Remove(profileToDelete);
 
@@ -71,42 +71,42 @@ namespace Covid19TestService_API.Controllers
         }
 
         [HttpPost("PCR/add")]
-        public ActionResult<Profile> CreatePCR(int ct, DateOnly takenon, bool ispositve, int pid)
+        public ActionResult<Pcr> CreatePCR(Pcr pcr)
         {
             var allpcr = context.Pcr;
             int nextId = allpcr.Max(x => x.Pcrid);
 
-            Pcr pcr = new Pcr(nextId, ct, takenon, ispositve, pid);
+            pcr.Pcrid = nextId;
             context.Pcr.Add(pcr);
 
             return Ok(pcr);
         }
 
         [HttpPost("Antigen/add")]
-        public ActionResult<Profile> CreateAntigen(int lines, DateOnly takenon, bool ispositive, int pid)
+        public ActionResult<Antigen> CreateAntigen(Antigen antigen)
         {
             var allAntigen = context.Antigen;
             int nextId = allAntigen.Max(x => x.Aid);
 
-            Antigen antigen = new Antigen(nextId, lines, takenon, ispositive, pid);
+            antigen.Aid = nextId;
             context.Antigen.Add(antigen);
 
             return Ok(antigen);
         }
 
-        [HttpPatch("Profile/edit/{ProfileId}")]
-        public ActionResult PatchProfileByIdstring(int ProfileId, string firstname, string lastname, int phonenumber, int ssn, DateOnly dob, string address, string city, string country) 
+        [HttpPatch("Profile/{profileId}")]
+        public ActionResult PatchProfileByIdstring(int profileId, Profile profile) 
         {
-            var profileToEdit = context.Profile.Where(x => x.Pid == ProfileId).FirstOrDefault();
+            var profileToEdit = context.Profile.Where(x => x.Pid == profileId).FirstOrDefault();
 
-            profileToEdit.Firstname = firstname;
-            profileToEdit.Lastname = lastname;
-            profileToEdit.Phonenumber = phonenumber;
-            profileToEdit.Ssn = ssn;
-            profileToEdit.Dob = dob;
-            profileToEdit.Address = address;
-            profileToEdit.City = city;
-            profileToEdit.Country = country;
+            profileToEdit.Firstname = profile.Firstname;
+            profileToEdit.Lastname = profile.Lastname;
+            profileToEdit.Phonenumber = profile.Phonenumber;
+            profileToEdit.Ssn = profile.Ssn;
+            profileToEdit.Dob = profile.Dob;
+            profileToEdit.Address = profile.Address;
+            profileToEdit.City = profile.City;
+            profileToEdit.Country = profile.Country;
 
             return Ok(profileToEdit);
         }
