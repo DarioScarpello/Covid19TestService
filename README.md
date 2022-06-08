@@ -6,9 +6,10 @@ Dieses Projekt ist ein Corona Test Service bei dem PCR oder Antigentest gemacht 
 
 **Wichtige Routen:**
 
-- Get: Alle Daten für den Login.
-- Get: Alle Daten die in der Profilwahl angezeigt werden.
-- Get: Alle Test Daten laden nachdem das Profil ausgewählt wurde.
+- Post: Route die für den Login verwendet wird.
+- Get: Alle Profile die der User erstellt hat.
+- Get: Alle PCR Tests die über das Profil gemacht wurden.
+- Get: Alle Antigen Tests die über das Profil gemacht wurden.
 - Post: Um ein Profil zu erstellen.
 - Delete: Um ein Profil zu löschen.
 - Post: Um einen neuen PCR Test zu erstellen.
