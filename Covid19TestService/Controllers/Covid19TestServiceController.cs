@@ -15,10 +15,20 @@ namespace Covid19TestService_API.Controllers
         static JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
         static testservicescarpelloContext context = new testservicescarpelloContext();
 
-        [HttpGet("Users")]
-        public ActionResult<List<Users>> GetUsersForLogin(string email)
+        [HttpPost("Login/{email}")]
+        public ActionResult Login(string email, string password)
         {
-            return Ok(context.Users.Where(x => x.Email == email).FirstOrDefault());
+            var selectedUser = context.Users.Where(x => x.Email == email).FirstOrDefault();
+
+            if (selectedUser != null) 
+            {
+                if (selectedUser.Password == password)
+                {
+                    return Ok();
+                }
+                return NotFound();
+            }
+            return NotFound();
         }
 
         [HttpGet("Profiles")]
