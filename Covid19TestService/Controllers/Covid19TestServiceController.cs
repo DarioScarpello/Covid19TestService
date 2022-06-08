@@ -31,22 +31,22 @@ namespace Covid19TestService_API.Controllers
             return NotFound();
         }
 
-        [HttpGet("Profiles")]
+        [HttpGet("Profiles/{uid}")]
         public ActionResult<List<Profile>> GetAllProfiles(int uid) 
         {
-            return Ok(context.Profile.Where(x => x.Uid == uid).FirstOrDefault());
+            return Ok(context.Profile.Where(x => x.Uid == uid));
         }
 
-        [HttpGet("PCR")]
-        public ActionResult<List<Pcr>> GetAllPCR(int pid)
+        [HttpGet("PCR/{pid}")]
+        public ActionResult<List<Pcr>> GetPcrById(int pid)
         {
-            return Ok(context.Pcr.Where(x => x.Pid == pid).FirstOrDefault());
+            return Ok(context.Pcr.Where(x => x.Pid == pid));
         }
 
-        [HttpGet("Antigen")]
-        public ActionResult<List<Antigen>> GetAllantigen(int pid)
+        [HttpGet("Antigen/{pid}")]
+        public ActionResult<List<Antigen>> GetAntigenById(int pid)
         {
-            return Ok(context.Antigen.Where(x => x.Pid == pid).FirstOrDefault());
+            return Ok(context.Antigen.Where(x => x.Pid == pid));
         }
 
         [HttpPost("Profiles/add")]
