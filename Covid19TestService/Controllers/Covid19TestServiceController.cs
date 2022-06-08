@@ -15,6 +15,7 @@ namespace Covid19TestService_API.Controllers
         static JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
         static testservicescarpelloContext context = new testservicescarpelloContext();
 
+        //FROMBODY nochmal nachfragen!!!!
         [HttpPost("Login/{email}")]
         public ActionResult Login(string email, string password)
         {
