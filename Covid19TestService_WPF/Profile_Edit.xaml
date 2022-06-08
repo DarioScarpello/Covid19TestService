@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Covid19TestService_WPF"
         mc:Ignorable="d"
-        Title="Profile_Edit" Height="450" Width="800">
-    <Grid>
-        
+        Title="Profile_Edit" Height="450" Width="150">
+    <Grid Background="#FF616DD6">
+        <TextBox x:Name="tb_firstname" HorizontalAlignment="Left" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_phonenumber" HorizontalAlignment="Left" Margin="10,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_ssn" HorizontalAlignment="Left" Margin="10,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_lastname" HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Vorname" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nachname" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefonnummer" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
+        <Label Content="SSN" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_dob" HorizontalAlignment="Left" Margin="10,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_address" HorizontalAlignment="Left" Margin="10,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Stadt" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_city" HorizontalAlignment="Left" Margin="10,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Land" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_country" HorizontalAlignment="Left" Margin="10,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="bt_save" Content="Speichern" HorizontalAlignment="Left" Margin="42,404,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
