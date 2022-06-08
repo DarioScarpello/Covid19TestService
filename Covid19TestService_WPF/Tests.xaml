@@ -1,0 +1,19 @@
+﻿<Window x:Class="Covid19TestService_WPF.Tests"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Covid19TestService_WPF"
+        mc:Ignorable="d"
+        Title="Tests" Height="450" Width="800">
+    <Grid Background="#FF616DD6">
+        <DataGrid x:Name="dg_pcr" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="10,35,400,100"/>
+        <DataGrid x:Name="dg_Antigen" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="405,35,10,100"/>
+        <Label Content="PCR" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Antigen" HorizontalAlignment="Left" Margin="405,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="bt_pcr" Content="Testen" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="390"/>
+        <Button x:Name="bt_antigen" Content="Testen" HorizontalAlignment="Left" Margin="405,339,0,0" VerticalAlignment="Top" Width="385"/>
+        <Button x:Name="tb_back" Content="Zurück" HorizontalAlignment="Center" Margin="0,404,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
