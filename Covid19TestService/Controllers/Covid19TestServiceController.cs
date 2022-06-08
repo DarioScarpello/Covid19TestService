@@ -49,16 +49,15 @@ namespace Covid19TestService_API.Controllers
             return Ok(context.Antigen.Where(x => x.Pid == pid));
         }
 
-        [HttpPost("Profiles/add")]
-        public ActionResult<Profile> CreateProfile(string firstname, string lastname, int phonenumber, int ssn, DateOnly dob, string address, string city, string country, int uid)
+        [HttpPost("Profiles")]
+        public ActionResult CreateProfile(Profile profile)
         {
             var allProfiles = context.Profile;
             int nextId = allProfiles.Max(x => x.Pid);
 
-            Profile profile = new Profile(nextId, uid, firstname, lastname, phonenumber, ssn, dob, address, city, country);
+            profile.Pid = nextId;
             context.Profile.Add(profile);
-
-            return Ok(profile);
+            return Ok();
         }
 
         [HttpDelete("Profiles/delete/{ProfileId}")]
