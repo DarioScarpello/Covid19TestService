@@ -70,7 +70,7 @@ namespace Covid19TestService_API.Controllers
             return Ok(profileToDelete);
         }
 
-        [HttpPost("PCR/add")]
+        [HttpPost("PCR")]
         public ActionResult<Pcr> CreatePCR(Pcr pcr)
         {
             var allpcr = context.Pcr;
@@ -82,7 +82,7 @@ namespace Covid19TestService_API.Controllers
             return Ok(pcr);
         }
 
-        [HttpPost("Antigen/add")]
+        [HttpPost("Antigen")]
         public ActionResult<Antigen> CreateAntigen(Antigen antigen)
         {
             var allAntigen = context.Antigen;
