@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Tests" Height="450" Width="800">
     <Grid Background="#FF616DD6">
-        <DataGrid x:Name="dg_pcr" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="10,35,400,100"/>
-        <DataGrid x:Name="dg_Antigen" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="405,35,10,100"/>
+        <DataGrid x:Name="dg_pcr" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,35,400,100"/>
+        <DataGrid x:Name="dg_Antigen" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="405,35,10,100"/>
         <Label Content="PCR" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Antigen" HorizontalAlignment="Left" Margin="405,10,0,0" VerticalAlignment="Top"/>
         <Button x:Name="bt_pcr" Content="Testen" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="390"/>

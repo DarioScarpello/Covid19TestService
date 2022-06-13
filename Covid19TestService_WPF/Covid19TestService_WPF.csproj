@@ -2,8 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Covid19TestService\Covid19TestService_API.csproj" />
+    <ProjectReference Include="..\Covid19TestService_Library\Covid19TestService_Library.csproj" />
+  </ItemGroup>
 
 </Project>

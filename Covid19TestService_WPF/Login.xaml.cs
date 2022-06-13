@@ -21,5 +21,10 @@ namespace Covid19TestService_WPF
         {
             InitializeComponent();
         }
+
+        private void tb_submit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

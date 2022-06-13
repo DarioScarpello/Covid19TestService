@@ -9,7 +9,7 @@
     <Grid Background="#FF616DD6">
         <TextBox x:Name="tb_email" HorizontalAlignment="Center" Margin="0,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Height="26"/>
         <TextBox x:Name="tb_password" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Height="26"/>
-        <Button x:Name="tb_submit" Content="Anmelden" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" Height="19" Width="90"/>
+        <Button x:Name="tb_submit" Content="Anmelden" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" Height="19" Width="90" Click="tb_submit_Click"/>
         <Label Content="E-Mail" HorizontalAlignment="Left" Margin="62,22,0,0" VerticalAlignment="Top" Height="24" Width="91"/>
         <Label Content="Passwort" HorizontalAlignment="Left" Margin="62,78,0,0" VerticalAlignment="Top" Height="24" Width="91"/>
 
