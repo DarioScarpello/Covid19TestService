@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Covid19TestService_WPF"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="Tests" Height="450" Width="800">
     <Grid Background="#FF616DD6">
@@ -14,6 +15,5 @@
         <Button x:Name="bt_pcr" Content="Testen" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="390"/>
         <Button x:Name="bt_antigen" Content="Testen" HorizontalAlignment="Left" Margin="405,339,0,0" VerticalAlignment="Top" Width="385"/>
         <Button x:Name="tb_back" Content="Zurück" HorizontalAlignment="Center" Margin="0,404,0,0" VerticalAlignment="Top"/>
-
     </Grid>
 </Window>
