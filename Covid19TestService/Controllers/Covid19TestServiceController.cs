@@ -61,10 +61,10 @@ namespace Covid19TestService_API.Controllers
             return Ok();
         }
 
-        [HttpDelete("Profiles{profileId}")]
-        public ActionResult<Profile> DeleteProfileById(int profileId) 
+        [HttpDelete("Profiles{pid}")]
+        public ActionResult<Profile> DeleteProfileById(int pid) 
         {
-            var profileToDelete = context.Profile.Where(x => x.Pid == profileId).FirstOrDefault();
+            var profileToDelete = context.Profile.Where(x => x.Pid == pid).FirstOrDefault();
 
             context.Profile.Remove(profileToDelete);
 
@@ -95,10 +95,10 @@ namespace Covid19TestService_API.Controllers
             return Ok(antigen);
         }
 
-        [HttpPatch("Profile/{profileId}")]
-        public ActionResult PatchProfileByIdstring(int profileId,[FromBody]Profile profile) 
+        [HttpPatch("Profile/{pid}")]
+        public ActionResult PatchProfileByIdstring(int pid,[FromBody]Profile profile) 
         {
-            var profileToEdit = context.Profile.Where(x => x.Pid == profileId).FirstOrDefault();
+            var profileToEdit = context.Profile.Where(x => x.Pid == pid).FirstOrDefault();
 
             profileToEdit.Firstname = profile.Firstname;
             profileToEdit.Lastname = profile.Lastname;
