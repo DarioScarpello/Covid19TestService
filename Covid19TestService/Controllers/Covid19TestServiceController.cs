@@ -17,7 +17,7 @@ namespace Covid19TestService_API.Controllers
 
         //DBContext nachfragen!!!!
         [HttpPost("Login/{email}")]
-        public ActionResult Login(string email, [FromBody]string password)
+        public ActionResult<Users> Login(string email, [FromBody]string password)
         {
             var selectedUser = context.Users.Where(x => x.Email == email).FirstOrDefault();
 
@@ -25,7 +25,7 @@ namespace Covid19TestService_API.Controllers
             {
                 if (selectedUser.Password == password)
                 {
-                    return Ok();
+                    return Ok(selectedUser);
                 }
                 return NotFound();
             }

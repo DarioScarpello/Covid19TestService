@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Covid19TestService_Library.Models;
 
 namespace Covid19TestService_WPF
 {
@@ -23,6 +24,22 @@ namespace Covid19TestService_WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var allprofiles = RestHelper.GetAllProfilsAsync()
+        }
+
+        private void bt_logout_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void bt_delete_Click(object sender, RoutedEventArgs e)
+        {
+            RestHelper.DeleteProfileAsnyc(lb_profiles.SelectedItem.pid);
         }
     }
 }

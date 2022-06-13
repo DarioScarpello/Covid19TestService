@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Covid19TestService_WPF"
         mc:Ignorable="d"
-        Title="Profile" Height="450" Width="410">
+        Title="Profile" Height="450" Width="410" Loaded="Window_Loaded">
     <Grid Background="#FF616DD6">
         <ListBox x:Name="lb_profiles" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,145,84"/>
         <Button x:Name="bt_submit" Content="Auswählen" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Width="255"/>
-        <Button x:Name="bt_delete" Content="Löschen" HorizontalAlignment="Left" Margin="288,380,0,0" VerticalAlignment="Top" Width="109" Height="20"/>
-        <Button x:Name="bt_logout" Content="Abmelden" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="255"/>
+        <Button x:Name="bt_delete" Content="Löschen" HorizontalAlignment="Left" Margin="288,380,0,0" VerticalAlignment="Top" Width="109" Height="20" Click="bt_delete_Click"/>
+        <Button x:Name="bt_logout" Content="Abmelden" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="255" Click="bt_logout_Click"/>
         <Button x:Name="bt_edit" Content="Bearbeiten" HorizontalAlignment="Left" Margin="288,355,0,0" VerticalAlignment="Top" Width="109" Height="20"/>
 
     </Grid>

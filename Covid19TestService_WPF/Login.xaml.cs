@@ -29,8 +29,8 @@ namespace Covid19TestService_WPF
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
-                Login login = new Login ();
-                login.Close();
+                Close();
+                return;
             }
             MessageBox.Show("Falsche Anmelde Daten!");
         }
