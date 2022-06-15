@@ -59,5 +59,12 @@ namespace Covid19TestService_WPF
             mainWindow.Show();
             Close();
         }
+
+        private void bt_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(user);
+            mainWindow.Show();
+            Close();
+        }
     }
 }
