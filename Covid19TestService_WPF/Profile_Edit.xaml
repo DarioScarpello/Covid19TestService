@@ -24,7 +24,7 @@
         <Label Content="Land" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_country" HorizontalAlignment="Left" Margin="10,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="bt_save" Content="Speichern" HorizontalAlignment="Left" Margin="42,404,0,0" VerticalAlignment="Top" Click="bt_save_Click"/>
-        <Button x:Name="bt_back" Content="Button" HorizontalAlignment="Left" Margin="42,429,0,0" VerticalAlignment="Top" Width="54" Click="bt_back_Click"/>
+        <Button x:Name="bt_back" Content="zurück" HorizontalAlignment="Left" Margin="42,429,0,0" VerticalAlignment="Top" Width="56" Click="bt_back_Click"/>
 
     </Grid>
 </Window>

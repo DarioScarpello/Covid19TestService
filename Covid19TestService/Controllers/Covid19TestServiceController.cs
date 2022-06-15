@@ -62,6 +62,8 @@ namespace Covid19TestService_API.Controllers
 
             profile.Pid = nextId;
             context.Profile.Add(profile);
+
+            //Save geht nicht, weil ich das Datum nicht speichern kann
             context.SaveChanges();
             return Ok();
         }
