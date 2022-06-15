@@ -19,11 +19,13 @@ namespace Covid19TestService_WPF
     public partial class Profile_Edit : Window
     {
         static Profile profile;
+        static Users user;
 
-        public Profile_Edit(Profile selectedprofile)
+        public Profile_Edit(Profile selectedprofile, Users selecteduser)
         {
             InitializeComponent();
             profile = selectedprofile;
+            user = selecteduser;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -52,6 +54,9 @@ namespace Covid19TestService_WPF
             editprofile.Country = tb_country.Text;
 
             await RestHelper.PatchProfileAsync(profile.Pid, editprofile);
+
+            MainWindow mainWindow = new MainWindow(user);
+            mainWindow.Show();
             Close();
         }
     }

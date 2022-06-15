@@ -109,6 +109,7 @@ namespace Covid19TestService_API.Controllers
             profileToEdit.Address = profile.Address;
             profileToEdit.City = profile.City;
             profileToEdit.Country = profile.Country;
+            context.SaveChanges();
 
             return Ok(profileToEdit);
         }
