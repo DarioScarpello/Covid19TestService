@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Covid19TestService_Library.Models
 {
@@ -13,7 +14,7 @@ namespace Covid19TestService_Library.Models
             Pcr = new HashSet<Pcr>();
         }
 
-        public Profile(int pid, int? uid, string firstname, string lastname, int? phonenumber, int? ssn, DateOnly? dob, string address, string city, string country)
+        public Profile(int pid, int? uid, string firstname, string lastname, int? phonenumber, int? ssn, DateTime? dob, string address, string city, string country)
         {
             Pid = pid;
             Uid = uid;
@@ -33,13 +34,19 @@ namespace Covid19TestService_Library.Models
         public string Lastname { get; set; }
         public int? Phonenumber { get; set; }
         public int? Ssn { get; set; }
-        public DateOnly? Dob { get; set; }
+        public DateTime? Dob { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
 
+        [JsonIgnore]
         public virtual Users UidNavigation { get; set; }
         public virtual ICollection<Antigen> Antigen { get; set; }
         public virtual ICollection<Pcr> Pcr { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Firstname} {Lastname}";
+        }
     }
 }

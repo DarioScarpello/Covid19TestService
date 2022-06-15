@@ -15,7 +15,6 @@ namespace Covid19TestService_API.Controllers
         static JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
         static testservicescarpelloContext context = new testservicescarpelloContext();
 
-        //DBContext nachfragen!!!!
         [HttpPost("Login/{email}")]
         public ActionResult<Users> Login(string email, [FromBody]string password)
         {
@@ -35,7 +34,9 @@ namespace Covid19TestService_API.Controllers
         [HttpGet("Profiles/{uid}")]
         public ActionResult<List<Profile>> GetAllProfiles(int uid) 
         {
-            return Ok(context.Profile.Where(x => x.Uid == uid));
+            var profiles = context.Profile.Where(x => x.Uid == uid).ToList();
+
+            return Ok(profiles);
         }
 
         [HttpGet("PCR/{pid}")]
