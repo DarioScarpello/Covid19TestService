@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Covid19TestService_Library.Models;
 
 namespace Covid19TestService_WPF
 {
@@ -17,7 +18,7 @@ namespace Covid19TestService_WPF
     /// </summary>
     public partial class Tests : Window
     {
-        public Tests()
+        public Tests(Profile selectedprofile)
         {
             InitializeComponent();
         }

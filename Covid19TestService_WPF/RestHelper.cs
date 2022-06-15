@@ -12,7 +12,7 @@ namespace Covid19TestService_WPF
 {
     internal class RestHelper
     {
-        private static HttpClient client = new HttpClient() { BaseAddress = new Uri("https://localhost:2682/api/") };
+        private static HttpClient client = new HttpClient() { BaseAddress = new Uri("https://localhost:5001/api/") };
         static JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
 
         public static async Task<Users> PostLoginAsync(string email, string password)

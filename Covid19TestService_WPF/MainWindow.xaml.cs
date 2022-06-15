@@ -39,9 +39,24 @@ namespace Covid19TestService_WPF
             login.Show();
         }
 
-        private void bt_delete_Click(object sender, RoutedEventArgs e)
+        private async void bt_delete_Click(object sender, RoutedEventArgs e)
         {
-            RestHelper.DeleteProfileAsnyc(lb_profiles.SelectedItem.pid);
+            Profile selectedprofile = lb_profiles.SelectedItem as Profile;
+            await RestHelper.DeleteProfileAsnyc(selectedprofile.Pid);
+        }
+
+        private void bt_submit_Click(object sender, RoutedEventArgs e)
+        {
+            Profile selectedprofile = lb_profiles.SelectedItem as Profile;
+            Tests tests = new Tests(selectedprofile);
+            tests.Show();
+        }
+
+        private void bt_edit_Click(object sender, RoutedEventArgs e)
+        {
+            Profile selectedprofile = lb_profiles.SelectedItem as Profile;
+            Profile_Edit profile_Edit= new Profile_Edit(selectedprofile);
+            profile_Edit.Show();
         }
     }
 }
