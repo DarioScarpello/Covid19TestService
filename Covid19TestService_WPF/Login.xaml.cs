@@ -25,9 +25,10 @@ namespace Covid19TestService_WPF
 
         private async void tb_submit_Click(object sender, RoutedEventArgs e)
         {
-            if (await RestHelper.PostLoginAsync(tb_email.Text, tb_password.Text))
+            var selecteduser = await RestHelper.PostLoginAsync(tb_email.Text, tb_password.Text);
+            if (selecteduser != null)
             {
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(selecteduser);
                 mainWindow.Show();
                 Close();
                 return;

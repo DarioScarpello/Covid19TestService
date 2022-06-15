@@ -15,7 +15,7 @@ namespace Covid19TestService_WPF
         private static HttpClient client = new HttpClient() { BaseAddress = new Uri("https://localhost:2682/api/") };
         static JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
 
-        public static async Task<bool> PostLoginAsync(string email, string password)
+        public static async Task<Users> PostLoginAsync(string email, string password)
         {
             StringContent content = new StringContent(JsonSerializer.Serialize(password, options), Encoding.UTF8, "application/json");
 
@@ -23,9 +23,10 @@ namespace Covid19TestService_WPF
 
             if (successCode.IsSuccessStatusCode)
             {
-                return true;
+                var selecteduser = await successCode.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<Users>(selecteduser, options);
             }
-            return false;
+            return null;
         }
 
         public static async Task<List<Profile>> GetAllProfilsAsync(int uid) 

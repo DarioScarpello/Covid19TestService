@@ -21,14 +21,16 @@ namespace Covid19TestService_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        static Users user = null;
+        public MainWindow(Users selecteduser)
         {
             InitializeComponent();
+            user = selecteduser;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var allprofiles = RestHelper.GetAllProfilsAsync()
+            var allprofiles = RestHelper.GetAllProfilsAsync(user.Uid);
         }
 
         private void bt_logout_Click(object sender, RoutedEventArgs e)
