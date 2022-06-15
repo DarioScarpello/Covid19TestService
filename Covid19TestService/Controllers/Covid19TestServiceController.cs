@@ -42,13 +42,16 @@ namespace Covid19TestService_API.Controllers
         [HttpGet("PCR/{pid}")]
         public ActionResult<List<Pcr>> GetPcrById(int pid)
         {
-            return Ok(context.Pcr.Where(x => x.Pid == pid));
+            var pcrs = context.Pcr.Where(x => x.Pid == pid).ToList();
+
+            return Ok(pcrs);
         }
 
         [HttpGet("Antigen/{pid}")]
         public ActionResult<List<Antigen>> GetAntigenById(int pid)
         {
-            return Ok(context.Antigen.Where(x => x.Pid == pid));
+            var antigens = context.Antigen.Where(x => x.Pid == pid).ToList();
+            return Ok(antigens);
         }
 
         [HttpPost("Profiles")]
@@ -74,11 +77,21 @@ namespace Covid19TestService_API.Controllers
             return Ok(profileToDelete);
         }
 
-        [HttpPost("PCR")]
-        public ActionResult<Pcr> CreatePCR([FromBody] Pcr pcr)
+        [HttpPost("PCR/{pid}")]
+        public ActionResult<Pcr> CreatePCR([FromBody] Pcr pcr, int pid)
         {
+            //var allpcrwithid = context.Pcr.Where(x => x.Pid == pid);
             var allpcr = context.Pcr;
-            int nextId = allpcr.Max(x => x.Pcrid);
+            int nextId;
+
+            if (allpcr == null)
+            {
+                nextId = 1;
+            }
+            else
+            {
+                nextId = allpcr.Max(x => x.Pcrid);
+            }
 
             pcr.Pcrid = nextId;
             context.Pcr.Add(pcr);
@@ -86,11 +99,21 @@ namespace Covid19TestService_API.Controllers
             return Ok(pcr);
         }
 
-        [HttpPost("Antigen")]
-        public ActionResult<Antigen> CreateAntigen([FromBody] Antigen antigen)
+        [HttpPost("Antigen{pid}")]
+        public ActionResult<Antigen> CreateAntigen([FromBody] Antigen antigen, int pid)
         {
+            //var allAntigenwithId = context.Antigen.Where(x => x.Pid == pid);
             var allAntigen = context.Antigen;
-            int nextId = allAntigen.Max(x => x.Aid);
+            int nextId;
+
+            if (allAntigen == null)
+            {
+                nextId = 1;
+            }
+            else
+            {
+                nextId = allAntigen.Max(x => x.Aid);
+            }
 
             antigen.Aid = nextId;
             context.Antigen.Add(antigen);

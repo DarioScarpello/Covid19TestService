@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:Covid19TestService_WPF"
         ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="Tests" Height="450" Width="800">
+        Title="Tests" Height="500" Width="800" Loaded="Window_Loaded">
     <Grid Background="#FF616DD6">
-        <DataGrid x:Name="dg_pcr" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,35,400,100"/>
-        <DataGrid x:Name="dg_Antigen" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="405,35,10,100"/>
+        <DataGrid x:Name="dg_pcr" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,35,400,150"/>
+        <DataGrid x:Name="dg_Antigen" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="405,35,10,150"/>
         <Label Content="PCR" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Antigen" HorizontalAlignment="Left" Margin="405,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="bt_pcr" Content="Testen" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="390"/>
-        <Button x:Name="bt_antigen" Content="Testen" HorizontalAlignment="Left" Margin="405,339,0,0" VerticalAlignment="Top" Width="385"/>
-        <Button x:Name="tb_back" Content="Zurück" HorizontalAlignment="Center" Margin="0,404,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="bt_pcr" Content="Testen" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="390" Click="bt_pcr_Click"/>
+        <Button x:Name="bt_antigen" Content="Testen" HorizontalAlignment="Left" Margin="405,339,0,0" VerticalAlignment="Top" Width="385" Click="bt_antigen_Click"/>
+        <Button x:Name="tb_back" Content="Zurück" HorizontalAlignment="Center" Margin="0,404,0,0" VerticalAlignment="Top" Click="tb_back_Click"/>
     </Grid>
 </Window>

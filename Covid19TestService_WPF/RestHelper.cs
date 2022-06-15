@@ -77,18 +77,18 @@ namespace Covid19TestService_WPF
             await client.DeleteAsync($"Profiles{pid}");
         }
 
-        public static async Task PostPCRAsync(Pcr pcr)
+        public static async Task PostPCRAsync(Pcr pcr, int pid)
         {
             StringContent content = new StringContent(JsonSerializer.Serialize(pcr, options), Encoding.UTF8, "application/json");
 
-            await client.PostAsync("PCR", content);
+            await client.PostAsync($"PCR/{pid}", content);
         }
 
-        public static async Task PostAntigensync(Antigen antigen)
+        public static async Task PostAntigensync(Antigen antigen, int pid)
         {
             StringContent content = new StringContent(JsonSerializer.Serialize(antigen, options), Encoding.UTF8, "application/json");
 
-            await client.PostAsync("PCR", content);
+            await client.PostAsync($"PCR/{pid}", content);
         }
 
         public static async Task PatchProfileAsync(int pid, Profile profile) 

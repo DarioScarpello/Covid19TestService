@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Covid19TestService_Library.Models
 {
@@ -9,13 +10,19 @@ namespace Covid19TestService_Library.Models
     {
         public int Aid { get; set; }
         public int? Lines { get; set; }
-        public DateOnly? Takenon { get; set; }
+        public DateTime? Takenon { get; set; }
         public bool? Ispositive { get; set; }
         public int? Pid { get; set; }
 
+        public Antigen()
+        {
+
+        }
+
+        [JsonIgnore]
         public virtual Profile PidNavigation { get; set; }
 
-        public Antigen(int aid, int? lines, DateOnly? takenon, bool? ispositive, int? pid)
+        public Antigen(int aid, int? lines, DateTime? takenon, bool? ispositive, int? pid)
         {
             Aid = aid;
             Lines = lines;
