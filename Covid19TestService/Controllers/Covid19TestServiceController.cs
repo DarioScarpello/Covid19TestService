@@ -59,6 +59,7 @@ namespace Covid19TestService_API.Controllers
 
             profile.Pid = nextId;
             context.Profile.Add(profile);
+            context.SaveChanges();
             return Ok();
         }
 

@@ -73,5 +73,12 @@ namespace Covid19TestService_WPF
             profile_Edit.Show();
             Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Profile_add profile_Add = new Profile_add(user);
+            profile_Add.Show();
+            Close ();
+        }
     }
 }
