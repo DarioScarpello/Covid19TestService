@@ -68,6 +68,7 @@ namespace Covid19TestService_API.Controllers
             var profileToDelete = context.Profile.Where(x => x.Pid == pid).FirstOrDefault();
 
             context.Profile.Remove(profileToDelete);
+            context.SaveChanges();
 
             return Ok(profileToDelete);
         }

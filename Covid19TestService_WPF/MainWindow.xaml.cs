@@ -53,6 +53,10 @@ namespace Covid19TestService_WPF
         {
             Profile selectedprofile = lb_profiles.SelectedItem as Profile;
             await RestHelper.DeleteProfileAsnyc(selectedprofile.Pid);
+
+            MainWindow mainWindow2 = new MainWindow(user);
+            mainWindow2.Show();
+            Close();
         }
 
         private void bt_submit_Click(object sender, RoutedEventArgs e)
