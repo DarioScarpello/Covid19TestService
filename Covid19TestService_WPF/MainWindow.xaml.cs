@@ -62,6 +62,13 @@ namespace Covid19TestService_WPF
         private void bt_submit_Click(object sender, RoutedEventArgs e)
         {
             Profile selectedprofile = lb_profiles.SelectedItem as Profile;
+
+            if (selectedprofile == null)
+            {
+                MessageBox.Show("Bitte ein Profil auswählen");
+                return;
+            }
+
             Tests tests = new Tests(selectedprofile);
             tests.Show();
         }

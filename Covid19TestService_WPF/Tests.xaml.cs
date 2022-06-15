@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,8 +28,22 @@ namespace Covid19TestService_WPF
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dg_Antigen.ItemsSource = await RestHelper.GetAntigenAsync(profile.Pid);
-            dg_pcr.ItemsSource = await RestHelper.GetPcrsAsync(profile.Pid);
+            ObservableCollection<Pcr> observableCollectionpcr = new ObservableCollection<Pcr>();
+            ObservableCollection<Antigen> observableCollectionAntigen = new ObservableCollection<Antigen>();
+            List<Antigen> ListAntigen = new List<Antigen>();
+            List<Pcr> ListPcr = new List<Pcr>();
+
+            ListAntigen = await RestHelper.GetAntigenAsync(profile.Pid);
+            ListPcr = await RestHelper.GetPcrsAsync(profile.Pid);
+
+            foreach (var item in ListAntigen)
+            {
+                observableCollectionAntigen.Add(item);
+            }
+            foreach (var item in ListPcr)
+            {
+                observableCollectionpcr.Add(item);
+            }
         }
 
         private void tb_back_Click(object sender, RoutedEventArgs e)
